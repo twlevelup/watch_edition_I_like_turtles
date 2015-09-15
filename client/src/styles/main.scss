@@ -51,6 +51,22 @@ textarea {
     padding: 0.2em 0;
 }
 
+.notification-form {
+  .form-group {
+    padding-bottom: 20px;
+  }
+
+  label {
+    display:flex;
+    align-items:center;
+  }
+
+  textarea {
+    @extend textarea;
+    width: 250px;
+    height: 100px;
+  }
+}
 
 /* ==========================================================================
    Author's custom styles
@@ -65,12 +81,14 @@ textarea {
 @media only screen and (min-width: 68.75em) {
     #left {
         width: 45%;
+        display: block;
     }
 }
 
 @media only screen and (min-width: 35em) {
     #left {
         margin-left: 10%;
+        display: block;
     }
 }
 
