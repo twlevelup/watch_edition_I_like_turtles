@@ -19,8 +19,15 @@ var notificationsConfig = [
       label: 'Welcome to school!',
       notificationType: 'dummyNotification',
       defaultValue: 'Welcome to school! +1 point',
-      message: 'Welcome to school! +1 point'
+      message: 'Welcome to school! +1 point.'
+    },
+    {
+      label: 'End of day quote',
+      notificationType: 'dummyNotification',
+      defaultValue: 'This is the end of day quote.'
     }
 ];
 
 module.exports = notificationsConfig;
+
+// check if 3:00, then push it on.

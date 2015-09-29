@@ -1,17 +1,12 @@
 'use strict';
 
-var NavPage = require('../../src/js/pages/navPage.js'),
+var navPage = require('../../src/js/pages/navPage'),
+  Router = require('../../src/js/framework/router'),
   App = require('../../src/js/app');
 
 global.App = App;
 
 describe('nav', function() {
-
-  var navPage;
-
-  beforeEach(function() {
-    navPage = new NavPage();
-  });
 
   describe('button event handlers', function() {
 

@@ -1,14 +1,10 @@
 'use strict';
 
-var Page = require('../framework/page');
+var PageView = require('../framework/page');
 
-var NavPage = Page.extend({
+var NavPage = PageView.extend({
 
   id: 'nav-page',
-
-  initialize: function() {
-
-  },
 
   template: require('../../templates/pages/navPage.hbs'),
 
@@ -27,4 +23,4 @@ var NavPage = Page.extend({
   }
 });
 
-module.exports = NavPage;
+module.exports = new NavPage();
