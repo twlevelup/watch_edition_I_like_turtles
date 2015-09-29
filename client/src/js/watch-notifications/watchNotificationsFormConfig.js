@@ -14,6 +14,12 @@ var notificationsConfig = [
     {
       label: 'No default message!',
       notificationType: 'dummyNotification'
+    },
+    {
+      label: 'Welcome to school!',
+      notificationType: 'dummyNotification',
+      defaultValue: 'Welcome to school! +1 point',
+      message: 'Welcome to school! +1 point'
     }
 ];
 
