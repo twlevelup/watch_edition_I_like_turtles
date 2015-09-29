@@ -1,7 +1,6 @@
 'use strict';
 
 var NavPage = require('../../src/js/pages/navPage.js'),
-  Router = require('../../src/js/router'),
   App = require('../../src/js/app');
 
 global.App = App;
