@@ -6,7 +6,7 @@ beforeEach(function() {
   // year, month, day, hour, minutes, seconds
   this.now = new Date(2015, 1, 2, 3, 4, 5);
   this.otherTime = new Date(2014, 0, 12, 12, 11, 10);
-
+  this.quoteTime = new Date(2015, 8, 14, 15, 30, 30);
   setFixtures('<div class="clock-date" /><div class="clock-time" /><div class="clock-date-time" />');
 
 });
@@ -58,5 +58,19 @@ describe('displaying the date and time', function() {
     clock.displayDateTime(this.now);
     var expectedOutput = 'Monday February 2 2015 03:04:05';
     expect($('.clock-date-time').text()).toEqual(expectedOutput);
+  });
+});
+
+describe('Testing if the quote appear', function() {
+  it('should not be a quote', function() {
+    var showQuote = clock.isQuoteTime(this.now);
+    var expectedOutput = false;
+    expect(showQuote).toEqual(expectedOutput);
+  });
+
+  it('should be a quote', function() {
+    var showQuote = clock.isQuoteTime(this.quoteTime);
+    var expectedOutput = true;
+    expect(showQuote).toEqual(expectedOutput);
   });
 });

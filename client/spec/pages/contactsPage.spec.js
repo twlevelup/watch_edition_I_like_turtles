@@ -1,7 +1,6 @@
 'use strict';
 
 var contactsPage = require('../../src/js/pages/contactsPage'),
-  Router = require('../../src/js/framework/router.js'),
   App = require('../../src/js/app'),
   eventHub = require('../../src/js/framework/eventHub');
 

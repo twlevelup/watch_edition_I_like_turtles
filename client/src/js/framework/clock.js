@@ -2,9 +2,11 @@
 
 var clock = {};
 
-clock.months = ['January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December'];
+clock.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 clock.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+clock.weekdays = [1, 2, 3, 4, 5];
 
 clock.displayDateTime = function(date) {
 
@@ -44,6 +46,21 @@ clock.displayDateTime = function(date) {
 
 clock.start = function() {
   setInterval(clock.displayDateTime, 1000);
+};
+
+clock.isQuoteTime = function(date) {
+  var d = date || new Date();
+  var hours = d.getHours();
+  var minutes = d.getMinutes();
+  var day = d.getDay();
+
+  var a = (clock.weekdays).indexOf(day);
+
+  if (a !== -1 && hours === 15 && minutes === 30) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 module.exports = clock;
