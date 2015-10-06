@@ -48,19 +48,4 @@ clock.start = function() {
   setInterval(clock.displayDateTime, 1000);
 };
 
-clock.isQuoteTime = function(date) {
-  var d = date || new Date();
-  var hours = d.getHours();
-  var minutes = d.getMinutes();
-  var day = d.getDay();
-
-  var a = (clock.weekdays).indexOf(day);
-
-  if (a !== -1 && hours === 15 && minutes === 30) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
 module.exports = clock;
