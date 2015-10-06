@@ -10,9 +10,9 @@ var HomeScreen = PageView.extend({
 
   buttonEvents: {
     right: '',
-    top: '',
+    top: 'goToMap',
     bottom: '',
-    left: 'goToMap'
+    left: ''
   },
 
   goToMap: function() {
