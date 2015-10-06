@@ -10,10 +10,13 @@ var NavPage = PageView.extend({
 
   buttonEvents: {
     right: '',
-    left: '',
     top: '',
+    left: 'goToHome',
     bottom: '',
     face: ''
+  },
+  goToHome: function() {
+    global.App.navigate('');
   },
 
   render: function() {
