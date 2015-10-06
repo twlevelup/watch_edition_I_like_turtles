@@ -1,13 +1,12 @@
 'use strict';
 var clock = require('../framework/clock.js');
-this.quoteTime = new Date(2015, 8, 14, 15, 30, 30);
 var quoteTimeF = clock.isQuoteTime();
 var quote =
      {
        label: 'End of the day Quote',
        notificationType: 'dummyNotification',
        defaultValue: '"I get nervous when I don\'t get nervous. If I\'m nervous I know I\'m going to have a good show." -Beyonce'
-     }
+     };
 var notificationsConfig = [
     {
       label: 'Go to contacts on right button',
@@ -28,16 +27,12 @@ var notificationsConfig = [
       notificationType: 'dummyNotification',
       defaultValue: 'Welcome to school! +1 point',
       message: 'Welcome to school! +1 point.'
-    },
-    {
-      label: 'End of day quote',
-      notificationType: 'dummyNotification',
-      defaultValue: 'This is the end of day quote.'
     }
 ];
 if (quoteTimeF === true) {
   notificationsConfig.push(quote);
 }
+
 module.exports = notificationsConfig;
 
 // check if 3:00, then push it on.
