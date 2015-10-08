@@ -1,33 +1,55 @@
 <!--<div id="map"></div>-->
 <script type="text/javascript">
-	function initMap(){
-	var source = {lat: -33.861202, lng: 151.210810}, //Circular Quay Station
-		destination = {lat: -33.862984, lng: 151.208879}, //ThoughtWorks
-		map = new google.maps.Map(document.getElementById('nav-page'), {
-		center: source,
-		scrollwheel: false,
-		zoom: 7
-	}),
-	directionsDisplay = new google.maps.DirectionsRenderer({
-		map: map
-	}),
-	request = {
-		// Set destination, origin and travel mode.
-		destination: destination,
-		origin: source,
-		travelMode: google.maps.TravelMode.WALKING
-	};
 
-	// Pass the directions request to the directions service.
-	var directionsService = new google.maps.DirectionsService();
+  // TODO disable options on map e.g. satelite view
 
-	directionsService.route(request, function(response, status) {
-		if (status === google.maps.DirectionsStatus.OK) {
-	  // Display the route on the map.
-	  directionsDisplay.setDirections(response);
-	}
-});
-}
+  function googleMapsAPICallback() {
+    if (navigator.geolocation) {
+      var browserSupportFlag = true;
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        initMap(initialLocation);
+      }, function() {
+        handleNoGeolocation(browserSupportFlag);
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      var browserSupportFlag = false;
+      handleNoGeolocation(browserSupportFlag);
+    }
+  }
+
+  function handleNoGeolocation() {}
+
+  function initMap(initialLocation){
+
+    var destination = {lat: -33.862984, lng: 151.208879}, // ThoughtWorks
+      map = new google.maps.Map(document.getElementById('nav-page'), {
+        disableDefaultUI: true,
+        center: initialLocation,
+        scrollwheel: false,
+        zoom: 7
+      }),
+      directionsDisplay = new google.maps.DirectionsRenderer({
+        map: map
+      }),
+      request = {
+        // Set destination, origin and travel mode.
+        destination: destination,
+        origin: initialLocation,
+        travelMode: google.maps.TravelMode.WALKING
+      };
+
+    // Pass the directions request to the directions service.
+    var directionsService = new google.maps.DirectionsService();
+
+    directionsService.route(request, function(response, status) {
+      if (status === google.maps.DirectionsStatus.OK) {
+        // Display the route on the map.
+        directionsDisplay.setDirections(response);
+      }
+    });
+  }
 </script>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKZ3VotM3P69Zeu0GuZBqbGWGnVhiVIuc&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKZ3VotM3P69Zeu0GuZBqbGWGnVhiVIuc&callback=googleMapsAPICallback"></script>
