@@ -16,7 +16,6 @@ var SODquote =
        defaultValue: '"Who run the world? Girls!" -Beyonce'
      };
 
-
 var notificationsConfig = [
     {
       label: 'Go to contacts on right button',
@@ -35,7 +34,7 @@ var notificationsConfig = [
     {
       label: 'Welcome to school!',
       notificationType: 'arriveAtSchoolNotification',
-      defaultValue: 'Welcome to school! +1 point.', 
+      defaultValue: 'Welcome to school! +1 point.'
     },
     {
       label: 'End of day quote',

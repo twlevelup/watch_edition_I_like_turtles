@@ -11,12 +11,16 @@ var HomeScreen = PageView.extend({
   buttonEvents: {
     right: '',
     top: 'goToMap',
-    bottom: '',
+    bottom: 'goToGoal',
     left: ''
   },
 
   goToMap: function() {
     global.App.navigate('nav');
+  },
+
+  goToGoal: function() {
+    global.App.navigate('goal');
   },
 
   render: function() {

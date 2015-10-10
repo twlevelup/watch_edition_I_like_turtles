@@ -2,5 +2,7 @@
 module.exports = {
   home: require('./homePage'),
   contacts: require('./contactsPage'),
-  nav: require('./navPage')
+  nav: require('./navPage'),
+  goal: require('./goalviewPage'),
+  target: require('./targetdisplayPage')
 };
