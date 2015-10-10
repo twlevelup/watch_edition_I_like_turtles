@@ -1,6 +1,8 @@
 'use strict';
 var clock = require('../framework/clock.js');
 
+var app = require('../app');
+
 var EODquote =
      {
        label: 'End of the day Quote',
@@ -13,6 +15,8 @@ var SODquote =
        notificationType: 'dummyNotification',
        defaultValue: '"Who run the world? Girls!" -Beyonce'
      };
+
+
 var notificationsConfig = [
     {
       label: 'Go to contacts on right button',
@@ -30,9 +34,18 @@ var notificationsConfig = [
     },
     {
       label: 'Welcome to school!',
+      notificationType: 'arriveAtSchoolNotification',
+      defaultValue: 'Welcome to school! +1 point.', 
+    },
+    {
+      label: 'End of day quote',
       notificationType: 'dummyNotification',
-      defaultValue: 'Welcome to school! +1 point',
-      message: 'Welcome to school! +1 point.'
+      defaultValue: 'This is the end of day quote.'
+    },
+    {
+      label: 'End of day score',
+      notificationType: 'dummyNotification',
+      defaultValue: 'You gained: ' + app.pointsGainedToday + ' points today! \n\r ___________________' + ' Total points this day: ' + app.score + '!'
     }
 ];
 notificationsConfig.push(EODquote);

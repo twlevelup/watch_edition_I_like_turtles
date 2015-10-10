@@ -5,6 +5,7 @@ var Router = require('./framework/router'),
   eventHub = require('./framework/eventHub'),
   pages = require('./pages'),
   WatchNotification = require('./framework/watchNotification'),
+  ArriveAtSchoolNotification = require('./watch-notifications/arriveAtSchoolNotification'),
   WatchNotificationHandler = require('./framework/watchNotificationHandler'),
   clock = require('./framework/clock');
 
@@ -12,6 +13,10 @@ var Router = require('./framework/router'),
 var DummyNotification = WatchNotification.extend({});
 
 var App = {
+
+  score: 3,
+
+  pointsGainedToday: 2,
 
   vent: eventHub,
 
@@ -21,7 +26,11 @@ var App = {
 
   // TODO load these from the watch-notifications directory
   // TODO pass in a reference to the element where notifications should be displayed
-  notificationHandler: new WatchNotificationHandler({dummyNotification: new DummyNotification()}),
+  notificationHandler: new WatchNotificationHandler({
+    dummyNotification: new DummyNotification(),
+    arriveAtSchoolNotification: new ArriveAtSchoolNotification()
+    // load correct dependency
+  }),
 
   navigate: function (route) {
     App.router.navigate(route, true);

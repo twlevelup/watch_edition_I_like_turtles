@@ -49,4 +49,12 @@ describe('The App', function() {
     it('should start the clock');
   });
 
+  xdescribe('end of the day score checking', function() {
+    it('should equal to the actual score as described in app.score', function() {
+
+      expect().toContainText('' + app.score);
+    });
+
+  });
+
 });

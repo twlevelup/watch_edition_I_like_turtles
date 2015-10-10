@@ -34,3 +34,4 @@ var WatchNotification = ViewWithButtons.extend({
 });
 
 module.exports = WatchNotification;
+
