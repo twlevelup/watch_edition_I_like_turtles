@@ -18,7 +18,6 @@ var WatchNotification = ViewWithButtons.extend({
   },
 
   render: function() {
-
     this.$el.html(this.template({message: this.message}));
 
     $('#watch-face').append(this.$el);

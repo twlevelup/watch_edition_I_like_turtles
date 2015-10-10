@@ -6,8 +6,11 @@ var Router = require('./framework/router'),
   pages = require('./pages'),
   WatchNotification = require('./framework/watchNotification'),
   ArriveAtSchoolNotification = require('./watch-notifications/arriveAtSchoolNotification'),
+  EndofDaySchoolNotification = require('./watch-notifications/endofDayNotification'),
   WatchNotificationHandler = require('./framework/watchNotificationHandler'),
-  clock = require('./framework/clock');
+  clock = require('./framework/clock'),
+  NotificationHandler = require('../../src/js/framework/watchNotificationHandler');
+
 
 // TODO remove this, just for testing
 var DummyNotification = WatchNotification.extend({});
@@ -28,8 +31,8 @@ var App = {
   // TODO pass in a reference to the element where notifications should be displayed
   notificationHandler: new WatchNotificationHandler({
     dummyNotification: new DummyNotification(),
-    arriveAtSchoolNotification: new ArriveAtSchoolNotification()
-    // load correct dependency
+    arriveAtSchoolNotification: new ArriveAtSchoolNotification(),
+    endofDaySchoolNotification: new EndofDaySchoolNotification()
   }),
 
   navigate: function (route) {

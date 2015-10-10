@@ -15,6 +15,7 @@ var NavPage = PageView.extend({
     bottom: '',
     face: ''
   },
+
   goToHome: function() {
     global.App.navigate('');
   },
