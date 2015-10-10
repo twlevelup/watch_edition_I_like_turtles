@@ -2,21 +2,6 @@
 var clock = require('../framework/clock.js');
 
 // var app = require('../app');
-
-var EODquote =
-     {
-       label: 'End of the day Quote',
-       notificationType: 'dummyNotification',
-       defaultValue: '"I get nervous when I don\'t get nervous. If I\'m nervous I know I\'m going to have a good show." -Beyonce'
-     };
-
-var SODquote =
-     {
-       label: 'Start of the day Quote',
-       notificationType: 'dummyNotification',
-       defaultValue: '"Who run the world? Girls!" -Beyonce'
-     };
-
 var notificationsConfig = [
     {
       label: 'Welcome to school!',
@@ -26,11 +11,16 @@ var notificationsConfig = [
     {
       label: 'End of day score',
       notificationType: 'endofDaySchoolNotification'
+    },
+    {
+      label: '9:00AM: Start of the day Quote',
+      notificationType: 'quoteNotification'
+    },
+    {
+      label: '3:30PM: End of the day Quote',
+      notificationType: 'quoteNotification'
     }
 ];
-
-notificationsConfig.push(EODquote);
-notificationsConfig.push(SODquote);
 
 module.exports = notificationsConfig;
 

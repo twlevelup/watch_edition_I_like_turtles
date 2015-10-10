@@ -7,6 +7,7 @@ var Router = require('./framework/router'),
   WatchNotification = require('./framework/watchNotification'),
   ArriveAtSchoolNotification = require('./watch-notifications/arriveAtSchoolNotification'),
   EndofDaySchoolNotification = require('./watch-notifications/endofDayNotification'),
+  QuoteNotification = require('./watch-notifications/quoteNotification'),
   WatchNotificationHandler = require('./framework/watchNotificationHandler'),
   clock = require('./framework/clock'),
   NotificationHandler = require('../../src/js/framework/watchNotificationHandler');
@@ -32,7 +33,9 @@ var App = {
   notificationHandler: new WatchNotificationHandler({
     dummyNotification: new DummyNotification(),
     arriveAtSchoolNotification: new ArriveAtSchoolNotification(),
-    endofDaySchoolNotification: new EndofDaySchoolNotification()
+    endofDaySchoolNotification: new EndofDaySchoolNotification(),
+    quoteNotification: new QuoteNotification()
+    // load correct dependency
   }),
 
   navigate: function (route) {
@@ -87,7 +90,6 @@ var App = {
     }
 
   }
-
 };
 
 _.extend(App, Backbone.Events);
