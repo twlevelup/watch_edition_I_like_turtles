@@ -22,7 +22,9 @@ var TargetdisplayPage = PageView.extend({
 
   render: function() {
 
-    this.$el.html(this.template());
+    this.$el.html(this.template({
+      getScore:global.App.score
+    }));
 
     return this;
 

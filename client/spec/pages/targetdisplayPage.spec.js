@@ -51,7 +51,7 @@ describe('targetDisplay', function() {
     it('should produce the correct HTML', function() {
       targetdisplayPage.render();
       var html = targetdisplayPage.$el.html();
-      expect(html).toContainText('targetDisplay');
+      expect(html).toContainText('Current Score');
     });
 
     it('returns the view object', function() {
