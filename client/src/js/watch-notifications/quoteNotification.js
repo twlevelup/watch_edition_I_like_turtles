@@ -17,10 +17,11 @@ var QuoteNotification = WatchNotification.extend({
       '"Who run the world? Girls!" - Beyoncé'
     ];
 
-    //var quote = quotes[Math.floor(Math.random() * quotes.length)];
-    index += 1;
-    index = index % quotes.length;
-    var quote = quotes[index];
+    var quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+    //index += 1;
+    //index = index % quotes.length;
+    //var quote = quotes[index];
     return quote;
   },
 

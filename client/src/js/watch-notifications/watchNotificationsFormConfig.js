@@ -1,7 +1,6 @@
 'use strict';
 var clock = require('../framework/clock.js');
 
-// var app = require('../app');
 var notificationsConfig = [
     {
       label: 'Welcome to school!',
@@ -20,6 +19,7 @@ var notificationsConfig = [
       label: '3:30PM: End of the day Quote',
       notificationType: 'quoteNotification'
     }
+
 ];
 
 module.exports = notificationsConfig;
