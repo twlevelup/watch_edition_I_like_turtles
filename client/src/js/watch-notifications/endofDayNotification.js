@@ -16,8 +16,8 @@ var EndofDaySchoolNotification = WatchNotification.extend({
   // test correct score is displayed in tempalte
 
   render: function() {
-    
-    var message= 'You gained: ' + global.App.pointsGainedToday + ' points today! \n\r ___________________ \n\r' + ' Total points this day: ' + global.App.score + '!';
+
+    var message = 'You gained: ' + global.App.pointsGainedToday + ' points today! \n\r ___________________ \n\r' + ' Total points this day: ' + global.App.score + '!';
 
     this.$el.html(this.template({message: message}));
 

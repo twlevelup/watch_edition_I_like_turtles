@@ -25,7 +25,7 @@ var notificationsConfig = [
     },
     {
       label: 'End of day score',
-      notificationType: 'endofDaySchoolNotification',
+      notificationType: 'endofDaySchoolNotification'
     }
 ];
 

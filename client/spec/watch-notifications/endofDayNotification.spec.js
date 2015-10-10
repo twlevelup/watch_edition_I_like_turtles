@@ -13,13 +13,14 @@ describe('Watch Notifications', function() {
     setFixtures('<div id="watch-face" />');
   });
 
-  describe('Rendering', function(){
-    it('should have the class endofDaySchoolNotification', function(){
+  describe('Rendering', function() {
+    it('should have the class endofDaySchoolNotification', function() {
       expect(endofDaySchoolNotification.className).toEqual('notification');
 
     });
-      it('should display the score message', function(){
-        global.App.score= 2;
+
+    it('should display the score message', function() {
+        global.App.score = 2;
         global.App.pointsGainedToday = 1;
         endofDaySchoolNotification.render();
         var watchFace = $('#watch-face');
@@ -28,6 +29,5 @@ describe('Watch Notifications', function() {
 
       });
   });
-
 
 });
