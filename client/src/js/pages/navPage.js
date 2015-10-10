@@ -12,7 +12,7 @@ var NavPage = PageView.extend({
     right: '',
     top: '',
     left: 'goToHome',
-    bottom: '',
+    bottom: 'goToHome',
     face: ''
   },
 
